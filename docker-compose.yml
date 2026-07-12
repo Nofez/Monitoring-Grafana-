@@ -13,6 +13,7 @@ services:
       - grafana_network
       - grafana_prometheus
 
+
 networks:
   grafana_network:
     name: grafana_network
@@ -21,5 +22,8 @@ networks:
   grafana_prometheus:
     name: grafana_prometheus
     external: true
+
+volumes:
+  grafana_data:
 
 
