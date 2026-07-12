@@ -5,6 +5,8 @@ services:
     image: grafana/grafana:11.6.16
     container_name: grafana
     restart: always
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=123
     ports:
       - "3000:3000"
     volumes:
