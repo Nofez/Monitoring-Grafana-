@@ -11,6 +11,12 @@ services:
       - "3000:3000"
     volumes:
       - grafana_data:/var/lib/grafana
+    healthcheck:
+      test: [ "CMD-SHELL", "wget -qO- http://localhost:3000/api/health || exit 1" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
     networks:
       - grafana_network
       - grafana_prometheus
